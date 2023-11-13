@@ -9,3 +9,5 @@ ConsoleUtil/bin
 
 CommonPathBuild/[Dd]ebug
 CommonPathBuild/[Rr]elease
+
+.vs/
