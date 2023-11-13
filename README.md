@@ -13,20 +13,24 @@ The project has two .NET Console Applications:
   - The other one is the chat itself. It's where the rabbitMQ client is running, opening two queues, one to receive messages and another to send. My rabbitMQ server container (docker).
 
 ### Queues
-   The receiver and sender queues are built on senderId:receiverId. To make it clear, let's go to an example.
+   Consumer (receiver) and sender queues are built on senderId:receiverId. To make it clear, let's go to an example.
+   In this example, I won't use a full GUID (32 chars) to use an 8 chars hex identifier. It makes comprehension clear and less confusing.
 
-   - FirstUserId -> 482abe7f5
-   - SecondUserId -> 784a8d42a
+   - FirstUserId -> 482abe7f
+   - SecondUserId -> 784a8d42
 
-They start communication on ChatManager app with the used Id of each other. After the ChatWindow app starts, two queues are opened:
+They start communication on the ChatManager app with the used ID of each other. After the ChatWindow app starts, two queues are opened:
 
-- 784a8d42a:482abe7f5
-- 482abe7f5:784a8d42a
+- 784a8d42:482abe7f
+- 482abe7f:784a8d42
 
-The receiving:
-  - FirstUser will consume messages from queue -> 784a8d42a:482abe7f5
-  - SecondUser will consume messages from queue -> 482abe7f5:784a8d42a
+Consumer(receive):
+  - FirstUser will consume messages from queue -> 784a8d42:482abe7f
+  - SecondUser will consume messages from queue -> 482abe7f:784a8d42
 
-The sending:
-  - FirstUser will send messages to queue -> 482abe7f5:784a8d42a
-  - SecondUser will send messages to queue -> 784a8d42a:482abe7f5
+Sender:
+  - FirstUser will send messages to queue -> 482abe7f:784a8d42
+  - SecondUser will send messages to queue -> 784a8d42:482abe7f
+
+![RabbitMQArchitecture](https://github.com/GuVP/RabbitMQChat/assets/69810289/6ba445a4-19f8-4b28-9f44-70063a9b1a00)
+
