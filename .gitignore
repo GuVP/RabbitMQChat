@@ -7,7 +7,7 @@ ChatWindow/bin
 ConsoleUtil/obj
 ConsoleUtil/bin
 
-CommonPathBuild/[Dd]ebug
-CommonPathBuild/[Rr]elease
+CommonPathBuild/[Dd]ebug/*
+CommonPathBuild/[Rr]elease/*
 
 .vs/
