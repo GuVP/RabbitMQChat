@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ChatWindow": {
+      "commandName": "Project",
+      "commandLineArgs": "AnaJulia Gustavo"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ChatManager": {
+      "commandName": "Project",
+      "commandLineArgs": "chat1 chat2"
+    }
+  }
+}
