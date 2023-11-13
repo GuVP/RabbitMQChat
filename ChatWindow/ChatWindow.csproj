@@ -8,7 +8,7 @@
     <StartupObject>ChatWindow.Program</StartupObject>
     <SignAssembly>False</SignAssembly>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
-    <BaseOutputPath>D:\MeusDocumentos\Repositorios\RabbitMQ-Chat\CommonPathBuild</BaseOutputPath>
+    <BaseOutputPath>D:\MeusDocumentos\Repositorios\RabbitMQChat\CommonPathBuild</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>

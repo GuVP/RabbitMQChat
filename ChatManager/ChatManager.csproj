@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>D:\MeusDocumentos\Repositorios\RabbitMQ-Chat\CommonPathBuild</BaseOutputPath>
+    <BaseOutputPath>D:\MeusDocumentos\Repositorios\RabbitMQChat\CommonPathBuild</BaseOutputPath>
   </PropertyGroup>
 
 </Project>

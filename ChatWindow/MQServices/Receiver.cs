@@ -24,15 +24,15 @@ namespace ChatWindow.MQServices
             _connection = _connectionFactory.CreateConnection();
             _channel = _connection.CreateModel();
 
-            string queue = $"{userId[1]}:{userId[0]}";
+            string receiverQueue = $"{userId[1]}:{userId[0]}";
 
-            _channel.QueueDeclare(queue, false, false, false, null);
+            _channel.QueueDeclare(receiverQueue, false, false, false, null);
 
             var consumer = new EventingBasicConsumer(_channel);
 
             consumer.Received += Consume;
 
-            _channel.BasicConsume(queue, true, consumer);
+            _channel.BasicConsume(receiverQueue, true, consumer);
         }
 
         public void StopConsumer()

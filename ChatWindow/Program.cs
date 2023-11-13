@@ -1,8 +1,5 @@
 ﻿using ChatWindow.MQServices;
-using System;
 using System.Diagnostics;
-using System.Reflection;
-using Util;
 
 namespace ChatWindow
 {
@@ -16,21 +13,14 @@ namespace ChatWindow
             {
                 receiver.StartConsumer(args);
                 Sender sender = new Sender(args);
-                ChatWriter(sender);
+                sender.StartSender();
 
-                receiver.StopConsumer();                
-            }
-        }
+                sender.SendMessage();
 
-        private static void ChatWriter(Sender sender)
-        {
-            var entrada = string.Empty;
-            do
-            {
-                ConsoleUtil.InputMessage();
-                sender.SendMessage(entrada);
+                receiver.StopConsumer();
+
+                Process.GetCurrentProcess().Kill();
             }
-            while (entrada != "--exit");
         }
     }
 }

@@ -3,31 +3,40 @@
     public static class ConsoleUtil
     {
         private static ConsoleColor defaultColor => ConsoleColor.White;
+        private static ConsoleColor previousConsoleForegroundColor {  get; set; }
 
-
-        public static void ChangeFontColor(ConsoleColor fontColor)
+        private static void ChangeFontColor(ConsoleColor fontColor)
         {
+            previousConsoleForegroundColor = Console.ForegroundColor;
             Console.ForegroundColor = fontColor;
+        }
+
+        private static void SetPreviousForegroundColor()
+        {
+            Console.ForegroundColor = previousConsoleForegroundColor;
         }
 
         public static void WriteWarningMessage(string text)
         {
-            ConsoleUtil.ChangeFontColor(ConsoleColor.Red);
+            ChangeFontColor(ConsoleColor.Red);
             Console.WriteLine(text);
-            ChangeFontColor(defaultColor);
+            SetPreviousForegroundColor();
+
         }
 
         public static void WriteReceivedMessage(string text)
         {
-            ConsoleUtil.ChangeFontColor(ConsoleColor.Blue);
+            ChangeFontColor(ConsoleColor.Blue);
             Console.WriteLine(text);
-            ChangeFontColor(defaultColor);
+            SetPreviousForegroundColor();
         }
 
         public static string InputMessage()
         {
-            ConsoleUtil.ChangeFontColor(ConsoleColor.Green);
-            return Console.ReadLine();
+            ChangeFontColor(ConsoleColor.Green);
+            var message = Console.ReadLine();
+            SetPreviousForegroundColor();
+            return message;
         }
     }
 }
