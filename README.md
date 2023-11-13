@@ -1,9 +1,13 @@
 # RabbitMQChat
+![RabbitMQ](https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white)
+![.NET|7.0](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+
 It's a repository based on a .NET console app to expose my knowledge of RabbitMQ and Docker.
 
 ## Idea
 The original idea of this project was to build a simple application that can establish security communication between two parts.
-To do that, the users will open the ChatManager. At the first moment, they will receive a session userId (GUID). This userId is how other users would establish a connection to communicate with them.
+To do that, the users will open ChatManager. At the first moment, they will receive a session userId (GUID). This userId is how other users would establish a connection to communicate with them.
 So for two users to start a conversation, both of them will need to know the userId of each other. It's a way to guarantee that open communication has the consent of both sides.
 
 ## How it works
