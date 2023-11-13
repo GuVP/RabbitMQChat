@@ -1,5 +1,11 @@
 ChatManager/obj
+ChatManager/bin
+
 ChatWindow/obj
+ChatWindow/bin
+
 ConsoleUtil/obj
+ConsoleUtil/bin
+
 CommonPathBuild/[Dd]ebug
 CommonPathBuild/[Rr]elease
